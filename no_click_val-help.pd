@@ -9,10 +9,8 @@
 #X text 672 368 Made by Alexandros Drymonitis;
 #X text 465 35 Arguments:;
 #X text 523 111 2nd: destination name;
-#X obj 38 316 no_click_val 0 here;
 #X obj 231 316 no_click_val 1 there;
-#X obj 425 316 no_click_val 2;
-#X floatatom 425 411 5 0 0 0 - - -, f 5;
+#X floatatom 425 411 0 0 0 0 - - -;
 #X text 481 163 Outlet: float;
 #X text 29 25 [no_click_val]: vanilla abstraction to type numbers without
 needing to click on a number atom;
@@ -33,6 +31,8 @@ or deactivated accordingly;
 #X text 522 53 1st: abstraction index \, so you can switch between
 abstractions using Shift+this_argument. Single digital numbers only
 \, so you can have up to ten if you want to use this feature.;
+#X obj 38 316 no_click_val 0 here;
+#X obj 425 316 no_click_val 2;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
-#X connect 11 0 12 0;
+#X connect 18 0 10 0;
