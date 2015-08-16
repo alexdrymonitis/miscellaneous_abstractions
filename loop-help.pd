@@ -1,0 +1,148 @@
+#N canvas 186 94 954 559 10;
+#X msg 24 117 bang;
+#X obj 81 202 print count;
+#X floatatom 43 142 5 0 0 0 - - -, f 5;
+#X floatatom 62 160 5 0 0 0 - - -, f 5;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X msg 24 273 bang;
+#X obj 57 318 print count;
+#X text 68 280 if only one argument is provided \, it will set the
+number of iterations \, and counting will start from zero;
+#X msg 25 421 bang;
+#X obj 82 466 print count;
+#X text 92 441 backwards counting is possible;
+#X text 98 158 this will produce a loop which counts from ten up to
+(including) twenty;
+#X text 512 20 Arguments:;
+#X text 558 68 2nd: end value;
+#X text 558 85 3rd: a non-zero value \, in case the end value is zero
+\, otherwise it won't work properly;
+#X text 553 235 2nd: start value;
+#X text 553 255 3rd: end value (it will be included in the counter)
+;
+#X text 554 274 4th: receives a bang to stop the loop;
+#X text 521 323 Outlets:;
+#N canvas 228 59 1061 495 more_examples 0;
+#X msg 62 28 bang;
+#X obj 113 73 print count;
+#X msg 62 158 bang;
+#X obj 125 203 print count;
+#X text 135 157 if you want your end value to be zero \, you have to
+use a third \, non zero argument \, in order for the abstraction to
+work properly;
+#X obj 83 325 print count;
+#X msg 62 280 5;
+#X text 129 48 even negative numbers are valid (both directions);
+#X text 102 283 you cal also create a [loop] with no arguments and
+send a value to the leftmost inlet to create a loop;
+#X msg 569 36 bang;
+#X obj 590 80 t f f;
+#X obj 617 102 sel 10;
+#X obj 590 125 print count;
+#X obj 62 180 loop -6 0 1;
+#X obj 62 50 loop 5 -2;
+#X obj 62 302 loop;
+#X obj 569 58 loop;
+#X text 635 208 of course \, you can send a bang to the rightmost inlet
+even when the number of iterations or the end value is set;
+#X msg 570 199 bang;
+#X obj 621 294 print count;
+#X obj 570 221 loop 0 10;
+#X obj 621 245 t f f;
+#X obj 648 269 sel 5;
+#X obj 87 94 print bangs;
+#X obj 62 115 print done;
+#X obj 93 223 print bangs;
+#X obj 62 243 print done;
+#X obj 72 348 print bangs;
+#X obj 62 369 print done;
+#X obj 595 316 print bangs;
+#X obj 570 338 print done;
+#X msg 571 373 10 23;
+#X obj 571 395 loop;
+#X obj 592 416 print count;
+#X obj 581 438 print bangs;
+#X obj 571 462 print done;
+#X text 620 374 finally \, you can send a list of the start and end
+value to the left-most inlet to set these values and start the loop
+;
+#X obj 579 147 print bangs;
+#X text 616 19 or you can send a bang to a [loop] with no arguments
+\, but you have to make sure you send a bang to its rightmost inlet
+at some point \, otherwise Pd will crash. this way the right-most outlet
+won't output anything;
+#X obj 569 168 print done;
+#X connect 0 0 14 0;
+#X connect 2 0 13 0;
+#X connect 6 0 15 0;
+#X connect 9 0 16 0;
+#X connect 10 0 12 0;
+#X connect 10 1 11 0;
+#X connect 11 0 16 3;
+#X connect 13 0 26 0;
+#X connect 13 1 25 0;
+#X connect 13 2 3 0;
+#X connect 14 0 24 0;
+#X connect 14 1 23 0;
+#X connect 14 2 1 0;
+#X connect 15 0 28 0;
+#X connect 15 1 27 0;
+#X connect 15 2 5 0;
+#X connect 16 0 39 0;
+#X connect 16 1 37 0;
+#X connect 16 2 10 0;
+#X connect 18 0 20 0;
+#X connect 20 0 30 0;
+#X connect 20 1 29 0;
+#X connect 20 2 21 0;
+#X connect 21 0 19 0;
+#X connect 21 1 22 0;
+#X connect 22 0 20 3;
+#X connect 31 0 32 0;
+#X connect 32 0 35 0;
+#X connect 32 1 34 0;
+#X connect 32 2 33 0;
+#X restore 525 410 pd more_examples;
+#X obj 24 179 loop 10 20;
+#X obj 24 295 loop 5;
+#X obj 25 443 loop 20 13;
+#X text 31 26 [loop]: a vanilla loop abstraction based on [until];
+#X text 21 61 [loop] is a "sophisticated" loop which packs [until]
+and a counter in one abstraction. It can be initiated with or without
+arguments;
+#X text 24 379 a bang is output from the left inlet after the loop
+has ended;
+#X text 512 141 Inlets:;
+#X text 556 39 1st: start value (if only one argument is provided \,
+it will set the number of iterations);
+#X text 527 487 made by Alexandros Drymonitis;
+#X obj 52 222 print bangs;
+#X obj 40 339 print bangs;
+#X obj 53 486 print bangs;
+#X obj 25 507 print done;
+#X obj 24 360 print done;
+#X obj 24 242 print done;
+#X text 553 163 1st: float \, bang \, list. A float will cause the
+number of iterations. A bang will start a loop whether iterations are
+set or not \, if not \, make sure to control the end by sending a bang
+to the right-most inlet. A list will set the start and end value and
+start the loop.;
+#X text 550 347 1st: outputs a bang when the loop has finished;
+#X text 551 380 3rd: outputs the counter values;
+#X text 551 363 2nd: outputs a bang after every value of the counter
+;
+#X connect 0 0 20 0;
+#X connect 2 0 20 1;
+#X connect 3 0 20 2;
+#X connect 5 0 21 0;
+#X connect 8 0 22 0;
+#X connect 20 0 34 0;
+#X connect 20 1 29 0;
+#X connect 20 2 1 0;
+#X connect 21 0 33 0;
+#X connect 21 1 30 0;
+#X connect 21 2 6 0;
+#X connect 22 0 32 0;
+#X connect 22 1 31 0;
+#X connect 22 2 9 0;
