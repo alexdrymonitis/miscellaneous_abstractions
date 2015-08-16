@@ -1,0 +1,21 @@
+#N canvas 210 183 827 342 10;
+#X symbolatom 35 150 0 0 0 0 - - -;
+#X obj 35 172 vanillaS2f;
+#X floatatom 35 194 0 0 0 0 - - -;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 140 148 <-provide a symbol with numeric elements (it can include
+other elements too \, like text \, which will be ignored);
+#X text 116 195 <-get the value as a float;
+#X text 506 28 Arguments: none;
+#X text 505 48 Inlet: symbol with numeric elemets;
+#X text 506 68 Outlet: float from symbol's numeric elements;
+#X text 26 63 [vanillaS2f] takes a symbol and converts its numeric
+elements to a float. It supports negative and decimal values as well
+as scientific notation.;
+#X text 25 26 [vanillaS2f]: vanilla symbol to float conversion abstraction
+;
+#X text 438 259 Written by Alexandros Drymonitis \, after a discussion
+on the Pd list with Cyrille Henry and Chris McCormick;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
