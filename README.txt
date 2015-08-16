@@ -6,7 +6,7 @@ This repository contains various Pd abstractions I personally use, which might b
 
 [loop] is a sophisticated vanilla loop abstraction.
 
-[vanillaJoin] is a vanilla list abstraction with all hot inlets, where you don't need to specify if you enter a float or a symbol. It imitates Max's [join].
+[vanillaJoin] is a vanilla list abstraction with all hot inlets, where you don't need to specify if you enter a float or a symbol. It imitates Max's [join]. It's Pd-extended counterpart is called [extendedJoin].
 
 [vanillaPak] is a vanilla [pack] abstraction with all hot inlets. It's Pd-extended counterpart is called [extendedPak].
 
