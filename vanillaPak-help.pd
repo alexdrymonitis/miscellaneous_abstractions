@@ -1,0 +1,31 @@
+#N canvas 342 310 868 340 10;
+#X obj 32 291 print;
+#X obj 32 269 vanillaPak 5;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 26 22 [vanillaPak]: Pd-vanilla abstraction \, similar to Max's
+[pak] \, which is a [pack] with hot inlets only;
+#X text 457 33 Arguments: number of inlets;
+#X text 456 92 Outlet: list of received floats;
+#X text 28 74 This abstraction is inspired by [vanillaBondo] by Matt
+Davey;
+#X text 472 257 Made by Alexandros Drymonitis;
+#X floatatom 83 227 5 0 0 0 - - -, f 5;
+#X floatatom 66 205 5 0 0 0 - - -, f 5;
+#X floatatom 49 183 5 0 0 0 - - -, f 5;
+#X floatatom 32 164 5 0 0 0 - - -, f 5;
+#X floatatom 101 246 5 0 0 0 - - -, f 5;
+#X text 29 93 There's some kind of hack in this abstraction (read it
+as text and you'll see) \, provided by IOhannes m zmoelnig from the
+Pd list \, so now saving connections to the abstraction is possible
+;
+#X msg 117 269 bang;
+#X text 455 60 Inlets: floats to be packed into a list which will be
+output or bang to ouput list;
+#X connect 1 0 0 0;
+#X connect 8 0 1 3;
+#X connect 9 0 1 2;
+#X connect 10 0 1 1;
+#X connect 11 0 1 0;
+#X connect 12 0 1 4;
+#X connect 14 0 1 4;
