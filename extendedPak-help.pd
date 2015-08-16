@@ -1,0 +1,26 @@
+#N canvas 282 201 773 350 10;
+#X obj 69 281 print;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 457 33 Arguments: number of inlets;
+#X text 455 60 Inlets: floats to be packed into a list;
+#X text 456 87 Outlet: list of received floats;
+#X text 472 257 Made by Alexandros Drymonitis;
+#X floatatom 125 217 5 0 0 0 - - -;
+#X floatatom 106 195 5 0 0 0 - - -;
+#X floatatom 87 173 5 0 0 0 - - -;
+#X floatatom 69 154 5 0 0 0 - - -;
+#X floatatom 144 236 5 0 0 0 - - -;
+#X obj 69 259 extendedPak 5;
+#X text 26 22 [extendedPak]: Pd-extended abstraction \, similar to
+Max's [pak] \, which is a [pack] with hot inlets only;
+#X text 28 74 This abstraction is inspired by [vanillaBondo] by Matt
+Davey. Its difference with [vanillaPak] is that this one uses [initbang]
+instead of [loadbang] \, thus can be used in a saved patch \, as its
+connections will be maintained.;
+#X connect 6 0 11 3;
+#X connect 7 0 11 2;
+#X connect 8 0 11 1;
+#X connect 9 0 11 0;
+#X connect 10 0 11 4;
+#X connect 11 0 0 0;
