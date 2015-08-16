@@ -50,7 +50,7 @@
 #X msg 223 99 40;
 #X obj 108 247 outlet;
 #X obj 43 49 inlet;
-#X obj 43 73 sel 41 33 63 163 36 37 94 38 42 40;
+#X obj 43 73 sel 41 33 64 163 36 37 94 38 42 40;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
