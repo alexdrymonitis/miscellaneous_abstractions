@@ -1,0 +1,72 @@
+#N canvas 366 234 861 411 10;
+#X floatatom 34 346 5 0 0 0 - - -, f 5;
+#X floatatom 97 327 5 0 0 0 - - -, f 5;
+#X symbolatom 34 213 0 0 0 0 - - -;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 27 23 [bin2any]: vanilla abstraction for conversion from binary
+to either decimal \, hexadecimal \, or octal;
+#X obj 34 304 bin2any DEC;
+#X obj 52 244 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 0 22 302 211 hot_pack 0;
+#X obj 56 37 inlet;
+#X obj 56 119 pack f f f f;
+#X obj 96 37 inlet;
+#X obj 96 59 t b f;
+#X obj 136 37 inlet;
+#X obj 136 59 t b f;
+#X obj 176 37 inlet;
+#X obj 176 59 t b f;
+#X obj 56 141 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 8 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 1 1;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 1 2;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 1 3;
+#X restore 52 265 pd hot_pack;
+#X obj 73 244 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 94 244 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 115 244 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 68 346 decimal value;
+#X text 131 326 number of bits;
+#X text 109 210 <- type a binary number without spaces;
+#X text 136 242 <- or provide a list with 1s and 0s;
+#X text 29 61 [bin2any] can take either a symbol or a list representing
+a binary value \, and convert it to either its decimal \, hexadecimal
+\, or octal equivalent.;
+#X text 30 103 If the symbol contains elements other than numbers \,
+[bin2any] will throw a message and won't output any value. The same
+applies to lists \, if they contain symbols or pointers. If the numbers
+provided are not only 0 and 1 \, [bin2any] will again throw a message
+and won't give any output.;
+#X text 460 94 Inlets:;
+#X text 501 109 1st: symbol or list representing a binary number;
+#X text 460 159 Outlets:;
+#X text 501 174 1st: decimal \, hexadecial \, or octal equivalent value
+of binary value provided;
+#X text 501 204 2nd: number of bits of binary value;
+#X text 604 357 Written by Alexandros Drymonitis;
+#X text 460 19 Arguments: type of output \, DEC \, HEX \, or OCT \,
+for decimal \, hexadecimal \, and octal respectively. DEC can be displayed
+in a number atom \, or sent to any object receiving floats. HEX and
+OCT are output as symbols. Default is DEC.;
+#X text 501 127 2nd: symbol to specify type of output \, DEC \, HEX
+\, or OCT;
+#X connect 2 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 1;
+#X connect 9 0 7 2;
+#X connect 10 0 7 3;
