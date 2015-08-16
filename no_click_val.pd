@@ -12,7 +12,7 @@
 #X obj 95 384 s;
 #X obj 30 136 t b b;
 #X symbolatom 211 46 0 0 0 0 - - -;
-#X obj 211 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 211 67 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X text 263 46 set destination;
 #X text 230 66 activate/deactivate;
@@ -113,12 +113,14 @@
 #X obj 131 205 list split;
 #X obj 159 285 -;
 #X obj 159 329 outlet;
-#X obj 267 242 inlet total;
+#X obj 267 220 inlet total;
 #X obj 159 259 swap;
 #X obj 131 57 inlet correct;
 #X obj 159 307 / 10;
 #X obj 291 56 r \$0-done;
 #X obj 131 227 t l l;
+#X obj 131 79 spigot;
+#X obj 267 242 t f f;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 1;
@@ -131,14 +133,17 @@
 #X connect 7 0 15 0;
 #X connect 7 1 11 0;
 #X connect 8 0 13 0;
-#X connect 10 0 11 1;
+#X connect 10 0 17 0;
 #X connect 11 0 8 0;
 #X connect 11 1 8 1;
-#X connect 12 0 3 0;
+#X connect 12 0 16 0;
 #X connect 13 0 9 0;
 #X connect 14 0 1 1;
 #X connect 15 0 3 1;
 #X connect 15 1 1 1;
+#X connect 16 0 3 0;
+#X connect 17 0 11 1;
+#X connect 17 1 16 1;
 #X restore 207 213 pd \$0-correct;
 #X obj 68 361 t f f;
 #X obj 68 406 outlet;
