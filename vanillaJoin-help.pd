@@ -1,0 +1,30 @@
+#N canvas 282 201 847 350 10;
+#X obj 69 281 print;
+#X obj 19 16 cnv 15 400 60 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 457 33 Arguments: number of inlets;
+#X text 26 84 This abstraction is inspired by [vanillaBondo] by Matt
+Davey;
+#X text 472 257 Made by Alexandros Drymonitis;
+#X obj 69 259 vanillaJoin 4;
+#X symbolatom 94 196 10 0 0 0 - - -, f 10;
+#X floatatom 69 177 5 0 0 0 - - -, f 5;
+#X symbolatom 144 236 10 0 0 0 - - -, f 10;
+#X floatatom 119 217 5 0 0 0 - - -, f 5;
+#X text 26 20 [vanillaJoin]: Pd-vanilla abstraction \, similar to Max's
+[join] \, which is a [pack] with hot inlets only where you don't need
+to specify whether you provide a float or a symbol;
+#X text 456 91 Outlet: list of received floats and symbols;
+#X msg 38 209 bang;
+#X text 455 60 Inlets: floats or symbols to be packed into a list \,
+bang any inlet to output the whole list;
+#X text 26 103 There's some kind of hack in this abstraction (read
+it as text and you'll see) \, provided by IOhannes m zmoelnig from
+the Pd list \, so now saving connections to the abstraction is possible
+;
+#X connect 5 0 0 0;
+#X connect 6 0 5 1;
+#X connect 7 0 5 0;
+#X connect 8 0 5 3;
+#X connect 9 0 5 2;
+#X connect 12 0 5 0;
