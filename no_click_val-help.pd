@@ -1,39 +1,45 @@
-#N canvas 113 165 901 505 10;
-#X obj 38 439 r here;
-#X floatatom 38 461 0 0 0 0 - - -;
-#X obj 231 439 r there;
-#X floatatom 231 461 0 0 0 0 - - -;
+#N canvas 101 31 901 610 10;
+#X obj 38 539 r here;
+#X floatatom 38 561 0 0 0 0 - - -;
+#X obj 231 539 r there;
+#X floatatom 231 561 0 0 0 0 - - -;
 #X obj 19 18 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
 0;
-#X text 480 140 Inlet: symbol to set destination of value;
-#X text 672 368 Made by Alexandros Drymonitis;
+#X text 480 120 Inlet: symbol to set destination of value;
+#X text 687 559 Made by Alexandros Drymonitis;
 #X text 465 35 Arguments:;
-#X text 523 111 2nd: destination name;
-#X obj 231 336 no_click_val 1 there;
-#X floatatom 425 431 0 0 0 0 - - -;
-#X text 481 163 Outlet: float;
+#X text 523 91 2nd: destination name;
+#X obj 231 436 no_click_val 1 there;
+#X floatatom 425 531 0 0 0 0 - - -;
+#X text 481 143 Outlet: float;
 #X text 29 25 [no_click_val]: vanilla abstraction to type numbers without
 needing to click on a number atom;
+#X obj 38 436 no_click_val 0 here;
+#X obj 425 436 no_click_val 23;
+#X text 522 53 1st: abstraction index \, so you can switch between
+abstractions using Shift+this_argument.;
+#X text 34 291 Use Shift+1st_argument to activate the corresponding
+abstraction \, so you can easily switch between abstractions without
+needing to click. The toggle of each abstraction will be activated
+or deactivated accordingly. This abstraction uses the shift symbols
+of number keys of a British keyboard. If you're using a different keyboad
+\, open the abstraction \, click on [pd set_arg] and change the symbols
+of [sel] accordingly in order for the abstraction to work properly.
+;
+#X text 35 197 Negative and decimal numbers are legal. You can also
+use backspace to correct a value you've typed \, for as many digits
+you want to correct (if you erase all decimal digits \, you must hit
+the dot key to create a decimal. if you erase all digits \, the number
+will be zeroed \, and if it was a negative \, you'll need to hit hyphen
+again).;
 #X text 33 77 Set the destination via the symbol atom \, if you haven't
 done so via argument (then click anywhere outside the abstraction \,
 otherwise whatever you type will be typed in the symbol atom again)
 \, activate the abstraction with the toggle (it's active by default)
 and type the number you want. There's a number atom in the abstraction
-to display what the number as you type. Hit return to receive the value
-in the corresponding [receive] \, or from the outlet of the abstraction
+to display the number as you type. Hit return to receive the value
+in the corresponding [receive] \, or from the outlet of the abstraction.
 ;
-#X text 34 261 Use Shift+1st_argument to activate the corresponding
-abstraction \, so you can easily switch between abstractions without
-needing to click. The toggle of each abstraction will be activated
-or deactivated accordingly;
-#X text 522 53 1st: abstraction index \, so you can switch between
-abstractions using Shift+this_argument. Single digital numbers only
-\, so you can have up to ten if you want to use this feature.;
-#X obj 38 336 no_click_val 0 here;
-#X obj 425 336 no_click_val 2;
-#X text 35 197 Negative and decimal numbers are legal. You can also
-use backspace to correct a value you've typed \, for as many digits
-you want to correct (doesn't work properly with decimals yet);
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
-#X connect 17 0 10 0;
+#X connect 14 0 10 0;
