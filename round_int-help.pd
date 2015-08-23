@@ -1,0 +1,15 @@
+#N canvas 169 226 851 233 10;
+#X floatatom 32 99 5 0 0 0 - - -, f 5;
+#X obj 32 118 round_int;
+#X floatatom 32 140 5 0 0 0 - - -, f 5;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 29 24 [round_int]: vanilla abstraction for rounding floats
+to the nearest integer;
+#X text 454 17 Arguments: none;
+#X text 453 34 Inlet: float to be rounded;
+#X text 467 185 Written by Alexandros Drymonitis;
+#X text 454 52 Outlet: rounded float to the nearest integer. outputs
+value only when changed;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
