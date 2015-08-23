@@ -6,10 +6,12 @@ This repository contains various Pd abstractions I personally use, which might b
 
 [map] maps a range of values to another range.
 
-[no_click_val] is an abstraction that enables typing numeral values without needing to click on number atoms.
+[no_click_val] vanill abstraction that enables typing numeral values without needing to click on number atoms.
 
-[vanillaJoin] is a vanilla list abstraction with all hot inlets, where you don't need to specify if you enter a float or a symbol. It imitates Max's [join]. It's Pd-extended counterpart is called [extendedJoin].
+[round_int] vanilla abstraction that rounds a float to the nearest integer.
 
-[vanillaPak] is a vanilla [pack] abstraction with all hot inlets. It's Pd-extended counterpart is called [extendedPak].
+[vanillaJoin] vanilla list abstraction with all hot inlets, where you don't need to specify if you enter a float or a symbol. It imitates Max's [join]. It's Pd-extended counterpart is called [extendedJoin].
 
-[vanillaS2f] is a vanilla abstraction to convert symbols with numeral characters to floats.
+[vanillaPak] vanilla float list abstraction with all hot inlets. It's Pd-extended counterpart is called [extendedPak].
+
+[vanillaS2f] vanilla abstraction that converts symbols with numeral characters to floats.
