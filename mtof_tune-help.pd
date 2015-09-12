@@ -1,0 +1,27 @@
+#N canvas 205 139 784 399 10;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 27 24 [mtof_tune]: a tunable MIDI to frequency converter;
+#X msg 32 114 69;
+#X obj 32 139 mtof_tune 442;
+#X floatatom 32 161 5 0 0 0 - - -, f 5;
+#X msg 32 194 69;
+#X floatatom 32 241 5 0 0 0 - - -, f 5;
+#X msg 32 274 69;
+#X floatatom 32 321 5 0 0 0 - - -, f 5;
+#X text 26 61 [mtof_tune] converts MIDI notes to frequencies \, according
+to the frequency set for the tuning A. Default pitch is 440;
+#X obj 32 219 mtof_tune 440;
+#X obj 32 299 mtof_tune 432;
+#X text 446 29 Arguments: tuning A frequency \, default is 440;
+#X text 447 48 Inlets:;
+#X text 484 64 1st: MIDI note;
+#X text 486 81 2nd: tuning A frequency;
+#X text 447 110 Outlet: frequency of MIDI note;
+#X text 507 331 Written by Alexandros Drymonitis;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 5 0 10 0;
+#X connect 7 0 11 0;
+#X connect 10 0 6 0;
+#X connect 11 0 8 0;
