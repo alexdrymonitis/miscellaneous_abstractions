@@ -1,10 +1,13 @@
 This repository contains various Pd abstractions I personally use, which might be helpful to others.
+Most of them are vanilla, but some extended versions are included, whenever it's not possible to use a common abstraction both for vanilla and extended. All abstractions support both Pd versions this way.
 
 [bin2any] converts a binary value entered either as a list of 1s and 0s, or as a symbol, to either a decimal, a hexadecimal, or an octal value. The Pd-extended version is called [bin2any_extended]
 
 [loop] is a sophisticated vanilla loop abstraction.
 
 [map] maps a range of values to another range.
+
+[mtof_tune] converts MIDI notes to frequencies which can be tuned according to tuning A.
 
 [no_click_val] vanill abstraction that enables typing numeral values without needing to click on number atoms.
 
