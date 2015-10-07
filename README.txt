@@ -3,6 +3,8 @@ Most of them are vanilla, but some extended versions are included, whenever it's
 
 [bin2any] converts a binary value entered either as a list of 1s and 0s, or as a symbol, to either a decimal, a hexadecimal, or an octal value. The Pd-extended version is called [bin2any_extended]
 
+[clip_abs] solves the issue [clip] has when the first argument is greater than the second
+
 [loop] is a sophisticated vanilla loop abstraction.
 
 [map] maps a range of values to another range.
