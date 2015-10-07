@@ -1,0 +1,42 @@
+#N canvas 154 212 949 415 10;
+#X floatatom 28 217 5 0 0 0 - - -, f 5;
+#X floatatom 28 258 5 0 0 0 - - -, f 5;
+#X obj 28 236 clip_abs 10 2;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 25 22 [clip_abs]: vanilla abstraction that solves the problem
+of [clip] when the first argument is greater than the second;
+#X floatatom 128 217 5 0 0 0 - - -, f 5;
+#X floatatom 128 258 5 0 0 0 - - -, f 5;
+#X obj 128 236 clip 10 2;
+#X text 27 69 [clip] must have its first argument smaller than the
+second \, otherwise it won't work as expected. [clip_abs] solves this
+problem.;
+#X text 28 290 Of course it works as expected with the first argument
+smaller than the second too.;
+#X floatatom 31 328 5 0 0 0 - - -, f 5;
+#X obj 31 347 clip_abs 1 5;
+#X floatatom 31 369 5 0 0 0 - - -, f 5;
+#X text 487 37 Arguments:;
+#X text 541 87 2nd: higher value to clip \, if number stream is ascending
+\, lower value to clip if descending;
+#X text 540 55 1st: lower value to clip \, if number stream is ascending
+\, higher value to clip if descending;
+#X text 502 135 Inlets:;
+#X text 541 153 1st: number stream to be clipped;
+#X text 543 171 2nd: replaces first argument;
+#X text 544 190 3rd: replaces second argument;
+#X text 512 222 Otulet: clipped number stream;
+#X text 624 354 Written by Alexandros Drymonitis;
+#X text 28 112 Obviously \, if you have a descending number stream
+\, you can still use [clip] \, as long as the first argument is smaller
+than the second. There might be some cases where the clipping values
+are set dynamically \, where you can't know in advance whether the
+arguments will be in order \, and that's where [clip_abs] comes in
+handy.;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
