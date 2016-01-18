@@ -1,0 +1,15 @@
+#N canvas 388 156 860 216 10;
+#X symbolatom 33 78 0 0 0 0 - - -;
+#X obj 33 122 print;
+#X obj 33 100 symbol_change test_symbol;
+#X obj 19 16 cnv 15 400 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 32 21 [symbol_change]: output a symbol only if it has changed.
+works like [change] \, but with symbols;
+#X text 439 19 Arguments: initial symbol to test against;
+#X text 449 42 Inlet: symbol to test;
+#X text 453 63 Outlet: symbol if different than previous one (or different
+than the argument);
+#X text 588 160 Written by Alexandros Drymonitis;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
