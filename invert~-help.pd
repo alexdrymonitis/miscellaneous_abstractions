@@ -1,4 +1,4 @@
-#N canvas 329 107 1153 891 10;
+#N canvas 327 105 1153 891 10;
 #X obj 206 207 invert~ 1;
 #X obj 26 289 tabwrite~ original;
 #X obj 206 289 tabwrite~ inverted;
@@ -30,16 +30,12 @@
 #X obj 37 533 *~ 200;
 #X text 627 39 Arguments:;
 #X text 695 63 1st: 1|0 to enable|disable inverting;
-#X text 696 83 2nd (optional): scaling of the signal. this argument
-is necessary when the signal to be inverted exceeds 1;
 #X text 649 150 Inlets:;
 #X text 697 175 1st (signal): signal to be inverted;
 #X text 698 191 2nd (control): 1|0 to enable|disable inverting (overwrites
 first argument);
 #X text 649 243 Outlet: inverted signal;
 #X text 881 843 Written by Alexandros Drymonitis;
-#X text 37 474 You can also invert unipolar signals that exceed one
-(in which case the range must be set via the second argument;
 #X obj 344 558 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 362 555 second inlet controls inverting;
@@ -53,9 +49,6 @@ first argument);
 #X array offset_original 512 float 2;
 #X coords 0 1 511 0 140 100 1 0 0;
 #X restore 621 716 graph;
-#X obj 622 535 *~ 0.5;
-#X obj 622 557 +~ 0.5;
-#X obj 841 609 invert~ 1 1.5;
 #X obj 621 671 tabwrite~ offset_original;
 #X obj 841 671 tabwrite~ offset_inverted;
 #X text 40 23 [invert~]: vanilla abstraction to invert a unipolar signal
@@ -63,30 +56,27 @@ first argument);
 #X obj 27 161 phasor~ 109;
 #X obj 37 511 phasor~ 109;
 #X obj 622 513 phasor~ 109;
-#N canvas 1037 143 482 481 init 0;
+#N canvas 1035 141 482 481 init 0;
 #X obj 22 89 s original;
 #X msg 22 34 ylabel -10 0 1;
 #X obj 38 65 s inverted;
 #X msg 22 164 ylabel -10 0 200;
 #X obj 22 219 s scaled_original;
 #X obj 38 195 s scaled_inverted;
-#X msg 22 304 ylabel -10 0 0.5 1;
 #X obj 215 110 loadbang;
 #X obj 38 335 s offset_inverted;
 #X obj 22 359 s offset_original;
+#X msg 22 304 ylabel -10 0 0.75 1;
 #X connect 1 0 0 0;
 #X connect 1 0 2 0;
 #X connect 3 0 4 0;
 #X connect 3 0 5 0;
-#X connect 6 0 8 0;
+#X connect 6 0 1 0;
+#X connect 6 0 3 0;
 #X connect 6 0 9 0;
-#X connect 7 0 1 0;
-#X connect 7 0 3 0;
-#X connect 7 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 0 8 0;
 #X restore 479 16 pd init;
-#X text 34 79 [invert~] will invert a unipolar signal that goes from
-0 to 1 (or from 1 to 0) with one argument only (which can be omited
-and overwritten by the right inlet of the abstraction);
 #X obj 386 207 invert~ 1;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array double_inverted 512 float 2;
@@ -97,28 +87,39 @@ and overwritten by the right inlet of the abstraction);
 must be set accordingly to give the correct result (in this case \,
 the second argument value is signal_scaling + (signal_offset * 2))
 ;
+#X text 37 474 You can also invert unipolar signals that exceeds one
+(in which case the range must be set via the second argument;
+#X obj 622 535 *~ 0.25;
+#X obj 622 557 +~ 0.75;
+#X obj 841 609 invert~ 1 1.75;
+#X text 34 79 [invert~] will invert a unipolar signal that goes from
+0 to 1 (or from 1 to 0) with one argument only (which can be omitted
+and overwritten by the right inlet of the abstraction);
+#X text 696 83 2nd (optional): scaling of the signal. this argument
+is necessary when the signal to be inverted exceeds 1 or has an offset
+;
 #X connect 0 0 2 0;
-#X connect 0 0 42 0;
+#X connect 0 0 36 0;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
 #X connect 4 0 1 0;
-#X connect 4 0 44 0;
+#X connect 4 0 38 0;
 #X connect 8 0 9 0;
 #X connect 9 0 12 0;
 #X connect 9 0 13 0;
 #X connect 14 0 13 0;
 #X connect 15 0 12 0;
 #X connect 15 0 14 0;
-#X connect 25 0 14 1;
-#X connect 27 0 28 0;
-#X connect 28 0 34 0;
-#X connect 28 0 35 0;
-#X connect 31 0 32 0;
-#X connect 32 0 33 0;
-#X connect 32 0 34 0;
-#X connect 33 0 35 0;
-#X connect 37 0 0 0;
-#X connect 37 0 1 0;
-#X connect 38 0 15 0;
-#X connect 39 0 31 0;
-#X connect 42 0 44 0;
+#X connect 23 0 14 1;
+#X connect 25 0 26 0;
+#X connect 26 0 29 0;
+#X connect 26 0 30 0;
+#X connect 32 0 0 0;
+#X connect 32 0 1 0;
+#X connect 33 0 15 0;
+#X connect 34 0 41 0;
+#X connect 36 0 38 0;
+#X connect 41 0 42 0;
+#X connect 42 0 29 0;
+#X connect 42 0 43 0;
+#X connect 43 0 30 0;
