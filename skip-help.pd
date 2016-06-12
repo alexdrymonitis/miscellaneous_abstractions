@@ -1,0 +1,35 @@
+#N canvas 464 369 1003 402 10;
+#X obj 19 16 cnv 15 410 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X obj 31 288 skip 1;
+#X text 24 22 [skip]: vanilla abstraction that skips a given amount
+of iterations of its input;
+#X floatatom 31 138 5 0 0 0 - - -, f 5;
+#X msg 47 158 bang;
+#X symbolatom 53 180 10 0 0 0 - - -, f 10;
+#X msg 56 248 reset;
+#X floatatom 124 274 5 0 0 0 - - -, f 5;
+#X msg 60 198 list 1 2 3;
+#X obj 31 310 print;
+#X text 24 70 [skip] takes any input and won't let it through for as
+many times as set via its argument (or sent through its right inlet).
+"reset" resets its internal counter (which needs to be sent even when
+a new value is input in the right inlet).;
+#X text 500 22 Argument: number of input iterations to be skipped;
+#X text 506 40 Inlets:;
+#X text 554 54 1st: any input to be skipped or passed through (after
+the number of skipped iterations has passed).;
+#X text 557 82 "reset" message to re-start the internal counter (and
+re-initialize skipping);
+#X text 561 111 2nd: number of skipped iterations (overrides argument)
+;
+#X text 511 143 Outlet: input of left inlet \, after set iterations
+have been skipped;
+#X text 679 340 Written by Alexandros Drymonitis;
+#X connect 1 0 9 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 0;
+#X connect 7 0 1 1;
+#X connect 8 0 1 0;
