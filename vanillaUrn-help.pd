@@ -1,0 +1,19 @@
+#N canvas 287 276 864 268 10;
+#X obj 22 20 cnv 15 440 50 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 29 25 [vanillaUrn]: random number generator vanilla abstraction
+that doesn't repeat a number before all numbers in its range have been
+output;
+#X obj 36 136 vanillaUrn 10;
+#X obj 36 158 print;
+#X msg 36 112 bang;
+#X floatatom 124 115 5 0 0 0 - - -, f 5;
+#X text 521 33 Argument: random number range;
+#X text 528 66 Inlets:;
+#X text 574 87 1st: bang to generate random number;
+#X text 574 106 2nd: float to override argument;
+#X text 531 125 Outlet: random numbers;
+#X text 572 195 Written by Alexandros Drymonitis;
+#X connect 2 0 3 0;
+#X connect 4 0 2 0;
+#X connect 5 0 2 1;
