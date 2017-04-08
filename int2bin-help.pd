@@ -1,0 +1,64 @@
+#N canvas 392 149 1115 852 10;
+#X obj 19 16 cnv 15 440 40 empty empty empty 20 12 0 14 -191765 -66577
+0;
+#X text 25 23 [int2bin]: vanilla abstraction to convert an integer
+to its binary version in either a list or a symbol;
+#X floatatom 37 202 5 0 0 0 - - -, f 5;
+#X obj 37 243 print list;
+#X floatatom 131 238 5 0 0 1 num_bits - -, f 5;
+#X floatatom 39 405 5 0 0 0 - - -, f 5;
+#X floatatom 127 446 5 0 0 1 num_bits - -, f 5;
+#X symbolatom 39 446 0 0 0 0 - - -;
+#X text 37 299 If the argument "sym" is provided \, then [int2bin]
+will output a symbol with the binary value. If a second argument with
+the number of bits is provided \, then [int2bin] will always output
+the specified number of bits \, truncating the value in case its bits
+are actually more than those specified (if you set 8 bits and input
+the value 256 \, you'll get eight zeros);
+#X text 563 39 Arguments:;
+#X text 629 95 2nd (optiona): number of bits of the output value. If
+no 2nd argument is provided \, [int2bin] will output only the necessary
+number of bits to express the binary value;
+#X text 589 176 Inlets:;
+#X text 640 196 1st: integer to be converted to binary;
+#X text 640 215 2nd: output type \, overrides first argument;
+#X text 640 235 3rd: number of bits \, overrides second arguments;
+#X floatatom 39 573 5 0 0 0 - - -, f 5;
+#X obj 39 662 int2bin;
+#X obj 39 756 print list;
+#X obj 100 736 print symbol;
+#X floatatom 108 648 5 0 0 1 change_nr_of_bits - -, f 5;
+#X floatatom 85 686 5 0 0 1 num_bits - -, f 5;
+#X msg 71 617 sym;
+#X obj 39 714 route list symbol;
+#X obj 39 424 int2bin sym 8;
+#X msg 62 596 lst;
+#X obj 37 221 int2bin lst;
+#X text 628 62 1st (optional): output type \, "lst" for list or "sym"
+for symbol \, default is "lst";
+#X text 35 78 [int2bin] takes integers and outputs either a list or
+a symbol with the binary version of the input value. The output type
+is specified via the first argument (default is lst for list) \, while
+a second argument can specify the number of bits of the output value.
+If no second argument is provided \, then [int2bin] will output only
+the necessary number of bits (for example \, for numbers up to 7 \,
+it will output only 3 bits);
+#X text 38 509 Both arguments can be overriden by sending "lst" or
+"sym" to the second inlet (to override the first argument) \, and a
+value in the third inlet (to overrider the second argument);
+#X text 705 784 Written by Alexandros Drymonitis with help by Mike
+Moser-Booth from Pd's forum;
+#X connect 2 0 25 0;
+#X connect 5 0 23 0;
+#X connect 15 0 16 0;
+#X connect 16 0 22 0;
+#X connect 16 1 20 0;
+#X connect 19 0 16 2;
+#X connect 21 0 16 1;
+#X connect 22 0 17 0;
+#X connect 22 1 18 0;
+#X connect 23 0 7 0;
+#X connect 23 1 6 0;
+#X connect 24 0 16 1;
+#X connect 25 0 3 0;
+#X connect 25 1 4 0;
